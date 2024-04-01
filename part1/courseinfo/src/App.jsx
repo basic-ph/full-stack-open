@@ -6,20 +6,24 @@ const Header = ({ course }) => {
   );
 };
 
+const Part = (props) => {
+  return (
+    <>
+      <li>
+        {props.name}: {props.exercises} excercises
+      </li>
+    </>
+  );
+};
+
 const Content = (props) => {
   return (
     <>
       <h2>Course Content</h2>
       <ol>
-        <li>
-          {props.part1}: {props.exercises1} excercises
-        </li>
-        <li>
-          {props.part2}: {props.exercises2} excercises
-        </li>
-        <li>
-          {props.part3}: {props.exercises3} excercises
-        </li>
+        <Part name={props.part1} exercises={props.exercises1} />
+        <Part name={props.part2} exercises={props.exercises2} />
+        <Part name={props.part3} exercises={props.exercises3} />
       </ol>
     </>
   );
